@@ -1,0 +1,28 @@
+/* Cat Zip — legal pages (Privacy Policy, Terms). Plain, fast, readable on a phone. */
+:root{
+  --bg:#fbf0dc; --card:#fffaf1; --ink:#4a3424; --soft:#7a6250; --line:#ead8b8; --accent:#2f8fe3; --green:#4fa62a;
+}
+*{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size:16px; line-height:1.6;
+}
+.wrap{ max-width:720px; margin:0 auto; padding:20px 16px 48px; }
+.top{ display:flex; flex-direction:column; align-items:center; gap:6px; margin:4px 0 18px; }
+.top img{ width:150px; height:auto; }
+h1, h2{ font-family:"Fredoka", "Nunito", sans-serif; line-height:1.2; }
+h1{ font-size:28px; margin:0; text-align:center; }
+.updated{ color:var(--soft); font-size:14px; margin:0; text-align:center; }
+.card{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:6px 20px 18px; box-shadow:0 4px 14px rgba(120,80,30,.08); }
+h2{ font-size:20px; margin:22px 0 6px; }
+p, li{ margin:0 0 10px; }
+ul{ padding-left:22px; margin:0 0 10px; }
+a{ color:var(--accent); font-weight:700; }
+.nav{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:18px 0 0; }
+.nav a{ text-decoration:none; background:#fff; border:1px solid var(--line); border-radius:999px; padding:8px 16px; }
+.links{ display:flex; flex-direction:column; gap:12px; margin:8px 0 4px; }
+.links a{ display:block; text-align:center; text-decoration:none; color:#fff; font-family:"Fredoka", sans-serif; font-size:20px;
+  padding:14px; border-radius:999px; background:linear-gradient(180deg,#9be36a,#4fa62a); box-shadow:0 4px 0 #3a8a1e; }
+.foot{ text-align:center; color:var(--soft); font-size:14px; margin-top:22px; }
