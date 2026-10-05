@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join my Cat Zip team!</title>
+<meta name="description" content="You're invited to a Cat Zip team. Get the game and join with the team code.">
+<meta property="og:title" content="Join my Cat Zip team! 🐾">
+<meta property="og:description" content="Get Cat Zip, tap JOIN A TEAM and enter the team code.">
+<meta property="og:image" content="https://gagibog.github.io/cat-zip-app-webpage/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .invite{ text-align:center; padding-top:14px; }
+  .invite h1{ font-size:30px; margin:0 0 4px; }
+  .team{ font-family:"Fredoka",sans-serif; font-weight:700; font-size:26px; color:#c2410c; margin:2px 0 14px; word-break:break-word; }
+  .ticket{ display:inline-block; margin:6px auto 4px; padding:12px 28px 10px; border:3px dashed #e3b26b; border-radius:18px; background:#fff;
+    font-family:"Fredoka",sans-serif; font-weight:700; font-size:40px; letter-spacing:6px; color:var(--ink); cursor:pointer; }
+  .ticket small{ display:block; font-family:"Nunito",sans-serif; font-weight:700; font-size:13px; letter-spacing:0; color:var(--soft); }
+  .steps{ text-align:left; max-width:360px; margin:18px auto 6px; padding:0; list-style:none; counter-reset:s; }
+  .steps li{ counter-increment:s; position:relative; padding:8px 0 8px 46px; font-weight:700; }
+  .steps li::before{ content:counter(s); position:absolute; left:0; top:6px; width:32px; height:32px; border-radius:50%; background:#62bdfa;
+    color:#fff; font-family:"Fredoka",sans-serif; font-size:18px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 0 #2f8fe3; }
+  .play{ display:inline-block; margin:14px auto 4px; padding:14px 26px; border-radius:999px; text-decoration:none; color:#fff;
+    font-family:"Fredoka",sans-serif; font-size:21px; background:linear-gradient(180deg,#9be36a,#4fa62a); box-shadow:0 4px 0 #3a8a1e; }
+  .copied{ min-height:20px; font-size:14px; color:#3a8a1e; font-weight:800; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="logo.webp" alt="Cat Zip" width="800" height="533"></header>
+  <main class="card invite">
+    <h1>You're invited! 🐾</h1>
+    <div class="team" id="team">to a Cat Zip team</div>
+    <div>Team code</div>
+    <button class="ticket" id="code" type="button">——<small>tap to copy</small></button>
+    <div class="copied" id="copied"></div>
+    <ol class="steps">
+      <li>Get <b>Cat Zip</b> — it's free</li>
+      <li>Open the game and tap <b>JOIN A TEAM</b></li>
+      <li>Enter the team code above and tap <b>Join</b></li>
+    </ol>
+    <a class="play" href="https://play.google.com/store/apps/details?id=com.catzipgame.app">Get it on Google Play</a>
+  </main>
+  <p class="foot"><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a></p>
+</div>
+<script>
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var code = (q.get("code") || "").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 8);
+    var team = (q.get("team") || "").slice(0, 30);
+    if (team) document.getElementById("team").textContent = "“" + team + "”";
+    var btn = document.getElementById("code");
+    if (code) btn.firstChild.textContent = code;
+    btn.addEventListener("click", function () {
+      if (!code) return;
+      var done = function () { document.getElementById("copied").textContent = "Copied! ✓"; };
+      if (navigator.clipboard) navigator.clipboard.writeText(code).then(done, function () {});
+    });
+  })();
+</script>
+</body>
+</html>
