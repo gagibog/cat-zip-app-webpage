@@ -24,7 +24,6 @@
     color:#fff; font-family:"Fredoka",sans-serif; font-size:18px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 0 #2f8fe3; }
   .play{ display:inline-block; margin:14px auto 4px; padding:14px 26px; border-radius:999px; text-decoration:none; color:#fff;
     font-family:"Fredoka",sans-serif; font-size:21px; background:linear-gradient(180deg,#9be36a,#4fa62a); box-shadow:0 4px 0 #3a8a1e; }
-  .also{ margin-top:8px; font-size:14px; color:var(--soft); }
   .copied{ min-height:20px; font-size:14px; color:#3a8a1e; font-weight:800; }
 </style>
 </head>
@@ -43,7 +42,6 @@
       <li>Enter the team code above and tap <b>Join</b></li>
     </ol>
     <a class="play" id="get" href="https://play.google.com/store/apps/details?id=com.catzipgame.app">Download Cat Zip — free</a>
-    <div class="also"><a href="https://play.google.com/store/apps/details?id=com.catzipgame.app">Google Play</a> · <a href="https://apps.apple.com/app/id6829459163">App Store</a></div>
   </main>
   <p class="foot"><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a></p>
 </div>
@@ -55,7 +53,7 @@
     if (team) document.getElementById("team").textContent = "“" + team + "”";
     var btn = document.getElementById("code");
     if (code) btn.firstChild.textContent = code;
-    // one smart button: App Store on iPhone/iPad, Google Play everywhere else (small links below for computers)
+    // one smart button: App Store on iPhone/iPad, Google Play everywhere else
     var ua = navigator.userAgent || "";
     var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
     if (ios) document.getElementById("get").href = "https://apps.apple.com/app/id6829459163";
